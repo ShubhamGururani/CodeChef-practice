@@ -1,0 +1,11 @@
+﻿from math import *
+N1 = int(input())
+for n in range(N1):
+	K = int(input())
+	l = [[]]*K
+	for k in range(K):
+		l[k] = list(map(int, input().split()))
+	for i in range(K-1,0,-1):
+		for j in range(i):
+			l[i-1][j] += max(l[i][j],l[i][j+1])
+	print(l[0][0]) 
