@@ -1,0 +1,11 @@
+﻿from math import gcd
+t=int(input())
+ 
+ 
+while t>0:
+    t -= 1
+    x,y = [int(i) for i in input().split(' ')]
+    if x == 0 or y == 0:
+        print(x+y)
+        continue
+    print(2*gcd(x,y))
