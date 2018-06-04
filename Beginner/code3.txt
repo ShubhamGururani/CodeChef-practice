@@ -1,0 +1,13 @@
+﻿t = int(input())
+mod = 10 ** 9 + 7
+for i in range(t):
+    n = int(input())
+    array = [int(i) for i in input().split()]
+    c = 2 * array[0]
+    sum = 0
+    b = 1
+    for j in range(1, n + 1):
+        b = (2 * b) % mod
+        sum = (2 * sum + array[j] * c) % mod
+        c = (c + b * array[j]) % mod
+    print(sum)
