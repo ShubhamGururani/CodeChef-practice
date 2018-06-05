@@ -1,0 +1,17 @@
+﻿for _ in range(int(input())):
+    n,k,e,m = map(int,input().split())
+    score = []
+    for i in range(0,n-1):
+        li1 = list(map(int,input().split()))
+        score += [sum(li1)]
+    li2 = list(map(int,input().split()))
+    score.sort(reverse = True)
+    s = sum(li2)
+    if s>score[k-1]:
+        print(0)
+    else:
+        diff = score[k-1] - s + 1
+        if diff<=m:
+            print(diff)
+        else:
+            print("Impossible")
